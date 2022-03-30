@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Websocket Channel</title>
+</head>
+<body>
+<h1>Websocket Channel</h1>
+<input id="channel-name-input" type="text" size="100"><br>
+<input id="channel-name-submit" type="button" value="Enter">
+</body>
+<script>
+    document.querySelector('#channel-name-input').focus();
+    document.querySelector('#channel-name-input').onkeyup = function (e) {
+        if (e.keyCode === 13) {  // enter, return
+            document.querySelector('#channel-name-submit').click();
+        }
+    };
+    document.querySelector('#channel-name-submit').onclick = function (e) {
+        let channelName = document.querySelector('#channel-name-input').value;
+        console.log(channelName);
+        {#window.location.pathname = '/chat/' + roomName + '/';#}
+    };
+</script>
+</html>
